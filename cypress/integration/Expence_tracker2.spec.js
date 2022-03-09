@@ -4,9 +4,9 @@ describe('transaction', () => {
     it('check menu', () => {
         const transactions = new ExpenceTracker();
         transactions.openAbt();
-        transactions.dashboardList.List(0, '\n                Dashboard\n            ');
-        transactions.dashboardList.List(1, '\n                Transactions\n            ');
-        transactions.dashboardList.List(2, '\n                About\n            ');
+        transactions.dashboardList.list(0, '\n                Dashboard\n            ');
+        transactions.dashboardList.list(1, '\n                Transactions\n            ');
+        transactions.dashboardList.list(2, '\n                About\n            ');
     });
 });
 
@@ -15,7 +15,7 @@ describe('transaction', () => {
         const transactions = new ExpenceTracker();
         transactions.openExp();
         transactions.addExpence.click();
-        transactions.expenceForm.ELb.click();
+        transactions.expenceForm.expenceLb.click();
         transactions.expenceForm.enterDate('7/20/2017');
         transactions.expenceForm.enterTime('11:00 AM');
         transactions.expenceForm.fill({
@@ -25,11 +25,11 @@ describe('transaction', () => {
             description: 'Appropriate description'
 
         });
-        transactions.expenceForm.Payment.click();
-        transactions.expenceForm.Einfo.click();
-        transactions.searchForm.SearchText.click();
-        transactions.searchForm.SearchText.type('Salary');
-        transactions.searchForm.SearchText.type('{enter}');
+        transactions.expenceForm.payment.click();
+        transactions.expenceForm.einfo.click();
+        transactions.searchForm.searchText.click();
+        transactions.searchForm.searchText.type('Salary');
+        transactions.searchForm.searchText.type('{enter}');
         transactions.expenceTable.row(4)
             .should('include.text', 'Salary')
             .and('include.text', 'Appropriate description')
@@ -43,7 +43,7 @@ describe('transaction', function () {
     it('check click on menu item', function () {
         const transactions = new ExpenceTracker();
         transactions.openDsb();
-        transactions.dashboardLink.LinkDsb()
-        transactions.dashboardLink.Link('/about')
+        transactions.dashboardLink.linkDsb()
+        transactions.dashboardLink.link('/about')
     });
 });
