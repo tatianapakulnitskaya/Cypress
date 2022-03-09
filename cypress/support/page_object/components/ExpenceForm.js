@@ -1,21 +1,19 @@
 class ExpenceForm {
 
-    get ELb() {
+    get expenceLb() {
         return cy.get('.dlg-income-radio-section > .e-radio-wrapper > label > .e-label')
     }
-    enterDate(Fdate){
+    enterDate(Fdate) {
         cy.get('#datepicker')
-        .clear()
-        .type(Fdate);
-        return this
+            .clear()
+            .type(Fdate);
     }
-    enterTime(Ftime){
+    enterTime(Ftime) {
         cy.get('#timepicker')
-        .clear()
-        .type(Ftime);
-        return this
+            .clear()
+            .type(Ftime);
     }
-    get Category() {
+    get category() {
         return cy.get('.dlg-category-container > :nth-child(1) > .e-float-input > .e-input-group-icon')
     }
     categoryGroup(group) {
@@ -27,18 +25,21 @@ class ExpenceForm {
     get description() {
         return cy.get('input[id=description]')
     }
-    get Payment() {
+    get payment() {
         return cy.get('.dlg-debit-payment > .e-radio-wrapper > label > .e-label')
     }
-    get Einfo() {
+    get einfo() {
         return cy.get('.e-footer-content > .e-info')
     }
-    fill({amount, description, cgroup}) 
-    {
+    fill({
+        amount,
+        description,
+        cgroup
+    }) {
         if (amount) this.amount.type(amount);
         if (description) this.description.type(description);
-        if (this.categoryGroup){
-            this.Category.click()
+        if (this.categoryGroup) {
+            this.category.click()
             this.categoryGroup(cgroup).click();
         }
     }

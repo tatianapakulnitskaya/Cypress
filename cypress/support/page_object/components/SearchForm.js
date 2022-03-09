@@ -1,7 +1,5 @@
 class SearchForm {
-
-
-    get SearchText() {
+    get searchText() {
         return cy.get('#txt')
     }
 }

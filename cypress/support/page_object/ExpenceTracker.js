@@ -1,6 +1,6 @@
 const ExpenceForm = require('./components/ExpenceForm');
 const SearchForm = require('./components/SearchForm');
-const ExpenceTable = require('./components/ExppenceTable');
+const ExpenceTable = require('./components/ExpenceTable');
 const DashboardList = require('./components/DashboardList');
 const DashboardLink = require('./components/DashboardLink');
 

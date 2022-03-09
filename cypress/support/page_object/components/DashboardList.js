@@ -1,12 +1,9 @@
 class DashboardList {
-    List(numb, expectedtext) {
+    list(numb, expectedtext) {
         cy.get('.page-list')
-        .find('div')
-        .eq(numb)
-        .should('have.text', expectedtext);
-        return this
-       
+            .find('div')
+            .eq(numb)
+            .should('have.text', expectedtext);
     }
 }
 module.exports = DashboardList;
-
